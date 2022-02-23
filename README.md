@@ -15,5 +15,5 @@ Bikeshare project is about asking interactive questions regarding statistical da
 
 
 ### Credits
-Templet readme.md and additional files were forked from :
+Template readme.md and additional files were forked from :
 https://github.com/hknJn/pdsnd_github.git
