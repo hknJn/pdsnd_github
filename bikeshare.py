@@ -14,11 +14,11 @@ def get_city():
     Returns:
     (Str) city- of users choise
     """
-        
+
     test=True
     while test:
         if test:
-            city=input(" Please input wich city of the following cities your'e interested in :  \n Chicago, New York or Washington ?\n").lower()
+            city=input(" Please input which city of the following cities your'e interested in :  \n Chicago, New York or Washington ?\n").lower()
         for c in CITIES:
             if c==city:
                 test=False
@@ -26,7 +26,7 @@ def get_city():
 
 def validate(lst,exp):
     '''
-    Checks if string is in list 
+    Checks if string is in list
     Returns:
     (Boolean) True/False
     '''
@@ -34,7 +34,7 @@ def validate(lst,exp):
         return True
     else:
         return False
-      
+
 def loop_raw_data(df):
     '''
     Prints 5 rows of raw data then asks user if she wants to see 5 more
@@ -57,11 +57,11 @@ def loop_raw_data(df):
             print('-'*60)
     else:
         return
-            
-        
+
+
 
 def get_filters():
-    
+
     """
     Asks user to specify a city, month, and day to analyze.
 
@@ -70,8 +70,8 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    
-    #call to city function        
+
+    #call to city function
     city=get_city()
 
     while True:
@@ -193,7 +193,7 @@ def station_stats(df):
     s_pop_stp_stn=df['End Station'].mode()
     print('Most common used end station is : {} '.format(s_pop_stp_stn[0]))
 # display most frequent combination of start station and end station trip
-    
+
     print('Most popular combination of start and stop station is : {} , with {} number of occurances '.format(df[['Start Station','End Station']].value_counts().index[0],df[['Start Station','End Station']].value_counts()[0]))
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*55)
@@ -208,7 +208,7 @@ def trip_duration_stats(df):
     # display total travel time
     sum_trv_tme=df['Trip Duration'].sum()
     print('Total traveltime is {} seconds or {} hours '.format(sum_trv_tme,round(sum_trv_tme/360,1)))
-    
+
 
     # display mean travel time
     mean_trv_time=df['Trip Duration'].mean()
@@ -245,7 +245,7 @@ def user_stats(df):
         e_date=df['Birth Year'].min()
         str_edt=str(e_date)[0:-2]
         print('Oldest user born in year : {} '.format(str_edt))
-    
+
 # Most recent
         r_date=df['Birth Year'].max()
         str_rdt=str(r_date)[0:-2]
@@ -266,8 +266,8 @@ def main():
     while True:
             print('-'*60)
             print('Hello! Let\'s explore some US bikeshare data!')
-            print('-'*60)  
-                    
+            print('-'*60)
+
             city, month,day =get_filters()
             df = load_data(city, month, day)
             time_stats(df)
@@ -282,5 +282,3 @@ def main():
 
 if __name__ == "__main__":
 	main()
-
-
