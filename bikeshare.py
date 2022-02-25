@@ -41,13 +41,13 @@ def loop_raw_data(df):
     '''
     print('-'*60)
     c=0
-    answer_1 =input("Would you like to see raw data ? ,\nPress YES! ").lower()
-    if answer_1=='yes':
+    answer_1 =input("Would you like to see raw data ? ,\nPress Y for  YES! ").lower()
+    if answer_1=='y':
         for index,row in df.iterrows():
             print(row)
             if c ==5:
-                answer =input("Do 5 more rows,Press No to end").lower()
-                if answer!='no':
+                answer =input("Do 5 more rows,Press N for No to end").lower()
+                if answer!='n':
                     c=0
                     print('='*60)
                     continue
